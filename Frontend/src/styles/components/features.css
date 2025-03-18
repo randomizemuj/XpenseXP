@@ -1,0 +1,72 @@
+.features-section {
+  padding: 4rem 2rem;
+  background: var(--glass-bg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+.feature-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.feature-icon {
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Explicitly remove any pseudo-elements */
+.feature-icon::before,
+.feature-icon::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Ensure the icon container itself is clean */
+.feature-icon > div {
+  position: relative;
+}
+
+.feature-icon > div::before,
+.feature-icon > div::after {
+  display: none !important;
+  content: none !important;
+}
+
+.feature-icon svg {
+  filter: drop-shadow(0 0 10px var(--primary-glow));
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card h3 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+} 
