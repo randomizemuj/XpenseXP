@@ -1,0 +1,676 @@
+:root {
+  --neon-blue: #0ff;
+  --neon-pink: #ff36f7;
+  --cyber-yellow: #f0db4f;
+  --dark-bg: #0a0a0f;
+  --cyber-purple: #6e2ca5;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --magic-gradient: linear-gradient(135deg, #00F5A0 0%, #00D9F5 100%);
+}
+
+body {
+  margin: 0;
+  background-color: var(--dark-bg);
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.landing-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0f 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add magical background effects */
+.landing-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 245, 160, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0, 217, 245, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Navigation Styles */
+.cyber-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  font-size: 2.2rem;
+  background: var(--magic-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Button Styles */
+.cyber-button {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(5px);
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.cyber-button:hover {
+  background: var(--magic-gradient);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.cyber-button-glow {
+  background: var(--magic-gradient);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 500;
+  position: relative;
+}
+
+.cyber-button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: var(--magic-gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.cyber-button-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border: 2px solid var(--neon-blue);
+  background: transparent;
+  color: var(--neon-blue);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-button-large:hover {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  box-shadow: 0 0 30px var(--neon-blue);
+}
+
+.cyber-button-large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.cyber-button-large:hover::before {
+  left: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  padding: 4rem 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.cyber-glitch {
+  font-size: 4rem;
+  color: var(--neon-blue);
+  text-shadow: 2px 2px var(--neon-pink);
+  margin-bottom: 1rem;
+}
+
+.cyber-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 20px var(--neon-blue));
+}
+
+/* Features Section */
+.features-section {
+  padding: 4rem 2rem;
+  background: rgba(110, 44, 165, 0.1);
+}
+
+.cyber-heading {
+  text-align: center;
+  color: var(--neon-pink);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.feature-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Leaderboard Section */
+.leaderboard-preview {
+  padding: 4rem 2rem;
+}
+
+.leaderboard-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.leaderboard-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 300px;
+  transition: all 0.3s;
+}
+
+.leaderboard-card:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.rank {
+  font-size: 1.5rem;
+  color: var(--cyber-yellow);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--cyber-purple);
+  border-radius: 50%;
+  border: 2px solid var(--neon-pink);
+}
+
+/* Footer */
+.cyber-footer {
+  background: rgba(10, 10, 15, 0.9);
+  padding: 2rem;
+  border-top: 2px solid var(--neon-blue);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+
+/* Add this to your existing CSS */
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.icon-glow {
+  color: var(--neon-pink);
+  filter: drop-shadow(0 0 8px var(--neon-pink));
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-glow {
+  color: var(--neon-blue);
+  filter: drop-shadow(0 0 12px var(--neon-blue));
+  transform: scale(1.1);
+}
+
+/* Add animation for the icons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.feature-card {
+  animation: float 6s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.feature-card:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.avatar-icon {
+  background: url('../assets/feature-icons/avatar-icon.svg') no-repeat center;
+}
+
+.streak-icon {
+  background: url('../assets/feature-icons/streak-icon.svg') no-repeat center;
+}
+
+.leaderboard-icon {
+  background: url('../assets/feature-icons/leaderboard-icon.svg') no-repeat center;
+}
+
+.analytics-icon {
+  background: url('../assets/feature-icons/analytics-icon.svg') no-repeat center;
+}
+
+/* Add this to your existing CSS */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--neon-blue),
+      -0.025em 0.05em 0 var(--cyber-yellow);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 var(--neon-pink), -0.05em -0.025em 0 var(--neon-blue),
+      -0.025em 0.05em 0 var(--cyber-yellow);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 var(--neon-pink),
+      0.025em 0.025em 0 var(--neon-blue), -0.05em -0.05em 0 var(--cyber-yellow);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 var(--neon-pink),
+      0.025em 0.025em 0 var(--neon-blue), -0.05em -0.05em 0 var(--cyber-yellow);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 var(--neon-pink), 0.05em 0 0 var(--neon-blue),
+      0 -0.05em 0 var(--cyber-yellow);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 var(--neon-pink), 0.05em 0 0 var(--neon-blue),
+      0 -0.05em 0 var(--cyber-yellow);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 var(--neon-pink),
+      -0.025em -0.025em 0 var(--neon-blue), -0.025em -0.05em 0 var(--cyber-yellow);
+  }
+}
+
+.cyber-glitch {
+  animation: glitch 1s infinite;
+}
+
+/* Add mobile menu styles */
+.mobile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+  color: var(--neon-blue);
+  transition: all 0.3s;
+}
+
+.mobile-menu-button:hover {
+  filter: drop-shadow(0 0 8px var(--neon-blue));
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.95);
+    flex-direction: column;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* Add these styles to your existing CSS */
+
+/* Loading Skeleton */
+.image-skeleton {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(
+    90deg,
+    rgba(110, 44, 165, 0.1) 25%,
+    rgba(110, 44, 165, 0.2) 50%,
+    rgba(110, 44, 165, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-blue);
+  font-size: 1.2rem;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Feature Icons Fallback */
+.feature-icon::before {
+  content: '⚠️';
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.avatar-icon::before {
+  content: '👤';
+}
+
+.streak-icon::before {
+  content: '🔥';
+}
+
+.leaderboard-icon::before {
+  content: '🏆';
+}
+
+.analytics-icon::before {
+  content: '📊';
+}
+
+/* Avatar Fallback */
+.avatar {
+  position: relative;
+}
+
+.avatar::after {
+  content: '👤';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+/* Add these new animations to your existing CSS */
+
+/* Enhanced glitch effect */
+@keyframes enhancedGlitch {
+  0% {
+    transform: translate(0);
+    text-shadow: 0 0 10px var(--neon-blue);
+  }
+  25% {
+    transform: translate(-2px, 2px);
+    text-shadow: -2px 0 var(--neon-pink), 2px 2px var(--neon-blue);
+  }
+  50% {
+    transform: translate(2px, -2px);
+    text-shadow: 2px 0 var(--cyber-yellow), -2px -2px var(--neon-blue);
+  }
+  75% {
+    transform: translate(-2px, 2px);
+    text-shadow: -2px 0 var(--neon-pink), 2px 2px var(--cyber-yellow);
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: 0 0 10px var(--neon-blue);
+  }
+}
+
+.cyber-glitch {
+  animation: enhancedGlitch 3s infinite;
+}
+
+/* Neon trail effect for buttons */
+.cyber-button-large::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--neon-blue);
+  filter: blur(15px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+
+.cyber-button-large:hover::after {
+  opacity: 0.5;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced feature card hover effect */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--neon-blue),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.feature-card:hover::before {
+  left: 100%;
+}
+
+/* Pulsing effect for icons */
+@keyframes iconPulse {
+  0% {
+    filter: drop-shadow(0 0 8px var(--neon-pink));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px var(--neon-blue));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px var(--neon-pink));
+  }
+}
+
+.icon-glow {
+  animation: iconPulse 3s infinite;
+}
+
+/* Enhanced mobile menu animation */
+@media (max-width: 768px) {
+  .nav-links {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Leaderboard card hover animation */
+.leaderboard-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(240, 219, 79, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.leaderboard-card:hover::after {
+  transform: translateX(0);
+}
+
+/* Add magic glow effects */
+.magic-glow {
+  position: relative;
+}
+
+.magic-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 245, 160, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.magic-glow:hover::after {
+  opacity: 1;
+} 
